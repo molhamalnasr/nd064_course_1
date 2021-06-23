@@ -14,6 +14,8 @@ def status():
         status=200,
         mimetype="application/json"
     )
+
+    app.logger.info(datetime.now().__str__() + ", Status endpoint was reached")
     return response
 
 
@@ -24,11 +26,14 @@ def metrics():
         status=200,
         mimetype="application/json"
     )
+
+    app.logger.info(datetime.now().__str__() + ", Metrics endpoint was reached")
     return response
 
 
 @app.route("/")
 def hello():
+    app.logger.info(datetime.now().__str__() + ", Main endpoint was reached")
     return "Hello World!<br>this is Molham"
 
 
