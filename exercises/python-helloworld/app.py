@@ -1,5 +1,8 @@
 from flask import Flask
 from flask import json
+from datetime import datetime
+
+import logging
 
 app = Flask(__name__)
 
@@ -30,4 +33,7 @@ def hello():
 
 
 if __name__ == "__main__":
+
+    logging.basicConfig(filename="app.log", level=logging.DEBUG)
+
     app.run(host='0.0.0.0')
