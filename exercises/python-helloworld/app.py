@@ -5,7 +5,17 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello():
-    return "Hello World!"
+    return "Hello World!<br>this is Molham"
+
+
+@app.route("/status")
+def status():
+    return "result: OK - healthy"
+
+
+@app.route("/metrics")
+def metrics():
+    return "data: {UserCount: 140, UserCountActive: 23}"
 
 
 if __name__ == "__main__":
